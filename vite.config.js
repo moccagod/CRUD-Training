@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { ghPages } from "vite-plugin-gh-pages";
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: "/CRUD-Training/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "development" ? "/" : "/CRUD-Training/",
   plugins: [react(), tailwindcss(), ghPages()],
-});
+}));
