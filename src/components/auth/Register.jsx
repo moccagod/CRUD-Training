@@ -45,6 +45,12 @@ const Register = () => {
       >
         Register
       </button>
+      <p className="text-sm mt-4 text-center">
+        Sudah punya akun?{" "}
+        <Link to="/login" className="text-blue-600 hover:underline">
+          Masuk di sini
+        </Link>
+      </p>
     </div>
   );
 };

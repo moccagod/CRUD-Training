@@ -41,9 +41,12 @@ const Login = () => {
       >
         Login
       </button>
-      <p className="text-sm mt-4 text-center">Belum punya akun?{" "}
-        <Link to="/register" className="text-blue-600 hover:underline">Daftar di sini</Link>
-</p>
+      <p className="text-sm mt-4 text-center">
+        Belum punya akun?{" "}
+        <Link to="/register" className="text-blue-600 hover:underline">
+          Daftar di sini
+        </Link>
+      </p>
     </div>
   );
 };
