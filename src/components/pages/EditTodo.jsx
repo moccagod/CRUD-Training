@@ -24,7 +24,7 @@ const EditTodo = () => {
       setTitle(data.title);
       setNote(data.note);
     } else {
-      alert("Todo tidak ditemukan atau bukan milik Anda");
+      alert("Catatan tidak ditemukan atau bukan milik Anda");
       navigate("/");
     }
   };
@@ -46,7 +46,7 @@ const EditTodo = () => {
       .eq("user_id", user.id); // pastikan hanya milik user bisa diubah
 
     if (!error) navigate(`/todo/${id}`);
-    else alert("Gagal memperbarui todo");
+    else alert("Gagal memperbarui Catatan");
   };
 
   useEffect(() => {

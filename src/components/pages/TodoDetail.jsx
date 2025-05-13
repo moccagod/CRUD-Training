@@ -22,13 +22,13 @@ const TodoDetail = () => {
     if (!error && data) {
       setTodo(data);
     } else {
-      alert("Todo tidak ditemukan atau bukan milik Anda");
+      alert("Catatan tidak ditemukan atau bukan milik Anda");
       navigate("/");
     }
   };
 
   const handleDelete = async () => {
-    const confirm = window.confirm("Yakin ingin menghapus todo ini?");
+    const confirm = window.confirm("Yakin ingin menghapus Catatan ini?");
     if (!confirm) return;
 
     const {
@@ -63,13 +63,13 @@ const TodoDetail = () => {
             to={`/edit/${todo.id}`}
             className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 cursor-pointer"
           >
-            ✏️ Edit
+            Edit
           </Link>
           <button
             onClick={handleDelete}
             className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 cursor-pointer"
           >
-            🗑️ Hapus
+            Hapus
           </button>
           <Link
             to="/"

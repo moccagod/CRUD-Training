@@ -5,6 +5,6 @@ import { ghPages } from "vite-plugin-gh-pages";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "development" ? "/" : "/CRUD-Training/",
+  base: mode === "development" ? "/" : "/MOCCANOTE/",
   plugins: [react(), tailwindcss(), ghPages()],
 }));
