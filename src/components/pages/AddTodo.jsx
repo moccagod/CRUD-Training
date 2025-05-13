@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../assets/database/supabaseClient";
 import Navbar from "../layouts/Navbar";
-import { Link } from "react-router-dom";
+import Footer from "../layouts/Footer";
 
 const AddTodo = () => {
   const [title, setTitle] = useState("");
@@ -80,6 +80,7 @@ const AddTodo = () => {
           Simpan
         </button>
       </div>
+      <Footer />
     </div>
   );
 };

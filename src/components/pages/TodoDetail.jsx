@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { supabase } from "../../assets/database/supabaseClient";
 import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
+
 const TodoDetail = () => {
   const { id } = useParams();
   const [todo, setTodo] = useState(null);
@@ -79,6 +81,7 @@ const TodoDetail = () => {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
