@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../../assets/database/supabaseClient";
 import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
 
 const Home = () => {
   const [todos, setTodos] = useState([]);
@@ -159,6 +160,7 @@ const Home = () => {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 };

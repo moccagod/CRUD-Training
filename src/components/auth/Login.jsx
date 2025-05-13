@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "../../assets/database/supabaseClient";
+import Footer from "../layouts/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -50,6 +51,7 @@ const Login = () => {
           </Link>
         </p>
       </div>
+      <Footer />
     </div>
   );
 };
