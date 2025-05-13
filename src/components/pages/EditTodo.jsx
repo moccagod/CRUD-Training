@@ -9,16 +9,22 @@ const EditTodo = () => {
   const navigate = useNavigate();
 
   const fetchTodo = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     const { data, error } = await supabase
       .from("todos")
       .select("*")
       .eq("id", id)
+      .eq("user_id", user.id) // hanya ambil milik user ini
       .single();
 
-    if (!error) {
+    if (!error && data) {
       setTitle(data.title);
       setNote(data.note);
     } else {
+      alert("Todo tidak ditemukan atau bukan milik Anda");
       navigate("/");
     }
   };
@@ -29,10 +35,15 @@ const EditTodo = () => {
       return;
     }
 
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     const { error } = await supabase
       .from("todos")
       .update({ title, note })
-      .eq("id", id);
+      .eq("id", id)
+      .eq("user_id", user.id); // pastikan hanya milik user bisa diubah
 
     if (!error) navigate(`/todo/${id}`);
     else alert("Gagal memperbarui todo");

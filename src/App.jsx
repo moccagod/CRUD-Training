@@ -1,16 +1,49 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
 import AddTodo from "./components/pages/AddTodo";
-import TodoDetail from "./components/pages/TodoDetail";
 import EditTodo from "./components/pages/EditTodo";
+import TodoDetail from "./components/pages/TodoDetail";
+import Home from "./components/pages/Home";
+import Login from "./components/auth/Login";
+import PrivateRoute from "./components/auth/PrivateRoute";
+import Register from "./components/auth/Register";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/add" element={<AddTodo />} />
-      <Route path="/todo/:id" element={<TodoDetail />} />
-      <Route path="/edit/:id" element={<EditTodo />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <Home />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/add"
+        element={
+          <PrivateRoute>
+            <AddTodo />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/edit/:id"
+        element={
+          <PrivateRoute>
+            <EditTodo />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/todo/:id"
+        element={
+          <PrivateRoute>
+            <TodoDetail />
+          </PrivateRoute>
+        }
+      />
     </Routes>
   );
 }
