@@ -29,9 +29,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
-      <main className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+
+      <main className="flex-1 max-w-5xl w-full mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold text-gray-800">Catatanku</h1>
           <Link
@@ -83,7 +84,7 @@ const Home = () => {
             <div className="mt-6">
               <Link
                 to="/add"
-                className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,46 +121,16 @@ const Home = () => {
                       to={`/todo/${todo.id}`}
                       className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-500"
                     >
-                      Selengkapnya
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="ml-1 h-4 w-4"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      Selengkapnya →
                     </Link>
                   </div>
                 </div>
-                {todo.completed && (
-                  <div className="bg-green-50 px-4 py-2 sm:px-6">
-                    <div className="text-sm text-green-700 flex items-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 mr-1"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      Completed
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
         )}
       </main>
+
       <Footer />
     </div>
   );
